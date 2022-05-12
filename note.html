@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Main Css -->
+    <link rel="stylesheet" href="css/main.css">
+
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+
+     
+  <ul class="nav justify-content-center">
+
+    <li class="nav-item">
+      <button>            <a class="nav-link" href="index.html">Smartex</a>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button>       
+           <a class="nav-link" href="flashcard.html">Flash Card</a>
+      </button>
+    </li>
+    <li class="nav-item">
+        <button>
+          <a class="nav-link" href="note.html">Note</a>
+
+        </button>
+    </li>
+    <li class="nav-item">
+        <button>
+          <a class="nav-link" href="task.html">Plan List</a>
+
+        </button>
+    </li> 
+  </ul>
+   
+
+     
+
+      <!-- Flashcard -->
+      <section>
+        <div class="container">
+            <h1 style="text-align: center; margin-top: 20px;">Notes</h1>
+          <div class="box">
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Title</label>
+                  <input type="text" id="note-title" class="form-control" placeholder="Note Title">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Details</label>
+                  <textarea class="form-control"  name="" id="note-text" cols="30" rows="2" placeholder="Note Details"></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Deadline</label>
+                  <input type="date" id="note-dob" class="form-control" placeholder="Note Title">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Place URL</label>
+                  <input type="url" id="url" class="form-control" placeholder="Place Resource URL">
+                </div>
+
+               
+   
+                <button id="add-btn" type="submit" >Add Note</button>
+              </form>
+          </div>
+
+
+          <div id="note">
+               
+          </div>
+        </div>
+      </section>
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/notes.js"></script>
+</body>
+</html>

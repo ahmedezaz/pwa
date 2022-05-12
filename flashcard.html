@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Main Css -->
+    <link rel="stylesheet" href="css/main.css">
+
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+
+   
+  <ul class="nav justify-content-center">
+
+    <li class="nav-item">
+      <button>            <a class="nav-link" href="index.html">Smartex</a>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button>       
+           <a class="nav-link" href="flashcard.html">Flash Card</a>
+      </button>
+    </li>
+    <li class="nav-item">
+        <button>
+          <a class="nav-link" href="note.html">Note</a>
+
+        </button>
+    </li>
+    <li class="nav-item">
+        <button>
+          <a class="nav-link" href="task.html">Plan List</a>
+
+        </button>
+    </li> 
+  </ul>
+  
+
+      <!-- Body -->
+      <header>
+        <div class="container">
+
+           <div>
+                <button  id="show_card_box">Add Card</button>
+              <button id="delete_cards">Delete Cards</button>
+            </div>
+          </div>
+        </div>
+
+      <!-- Flashcard -->
+      <section>
+        <div class="container">
+            <h1 style="text-align: center; margin-top: 20px;">FLASHCARD</h1>
+          <div id="create_card">
+            <h2>Create Flashcard</h2>
+            <label for="question">Question</label>
+            <textarea id="question" maxlength="280"></textarea>
+            <label for="answer" maxlength="280">Answer</label>
+            <br>
+            <textarea id="answer"></textarea>
+            <div>
+              <button  id="save_card">Save</button> <button  id="close_card_box">Close</button>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section>
+        <div class="container">
+          <div id="flashcards"></div>
+        </div>
+      </section>
+
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script src="js/app.js"></script>
+
+    <!-- <script>
+    
+
+// SOCIAL PANEL JS
+const floating_btn = document.querySelector('.floating-btn');
+const close_btn = document.querySelector('.close-btn');
+const social_panel_container = document.querySelector('.social-panel-container');
+
+floating_btn.addEventListener('click', () => {
+	social_panel_container.classList.toggle('visible')
+});
+
+close_btn.addEventListener('click', () => {
+	social_panel_container.classList.remove('visible')
+});
+    </script> -->
+</body>
+</html>

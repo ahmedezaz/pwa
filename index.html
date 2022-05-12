@@ -1,0 +1,200 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#083444" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="apple-touch-icon" href="/img/logo.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="icon" type="image/x-icon" href="/img/logo.png" />
+
+    <!-- Main Css -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  
+
+    <ul class="nav justify-content-center">
+
+        <li class="nav-item">
+          <button>            <a class="nav-link" href="index.html">Smartex</a>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button>       
+               <a class="nav-link" href="flashcard.html">Flash Card</a>
+          </button>
+        </li>
+        <li class="nav-item">
+            <button>
+              <a class="nav-link" href="note.html">Note</a>
+
+            </button>
+        </li>
+        <li class="nav-item">
+            <button>
+              <a class="nav-link" href="task.html">Plan List</a>
+
+            </button>
+        </li>
+
+        
+        
+      </ul>
+      <header>
+        
+        <div class="container">         
+        </div>
+      </header>
+         <!-- Body -->
+         <section>
+          <div class="container">            
+          </div>
+        </section>
+        <div>
+          <div class="container">
+            
+            <div class="box">
+
+              <p style="text-align: center; font-weight: 700;" id="battery"></p>
+
+                <form class="inputvalue">
+                    <div class="mb-3">
+                      <p style="text-align: center; color: #346bf2; font-weight: 700;" for="exampleInputEmail1" class="form-label">Check your plan</p>
+                      <input class="inputVal form-control" type="hidden" placeholder="Add your Plan" value="">                </div>
+       
+                    <a  class="btn"></a>
+                  </form>
+
+                <div class="todoLists">
+                
+                </div>
+                <button id = "find-me">Show my location</button><br/>
+        <p id = "status"></p>
+        <a id = "map-link" target="_blank"></a>
+
+            </div>
+    </div>
+        </div>
+   
+
+        <div class="container" style=" margin-bottom: 50px;">
+          <div style="margin-top: 50px;" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div style="background: #e8eef8;
+            box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;" class="carousel-inner">
+              <div  class="carousel-item active">
+                <div>
+                  <h1 style="text-align: center; color: #346bf2;">Flashcard</h1>
+                  <p style="text-align: center; padding: 10px;">Study shows increasing the ability
+                     to compose stories, memorizing, analyzing a problem, and enriching vocabulary</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div>
+                  <h1 style="text-align: center; color: #346bf2;">Notes</h1>
+                  <p style="text-align: center; padding: 10px;">Study shows that increasing the ability
+                     to compose stories, memorizing, analyzing a problem, and enriching vocabulary</p>
+                </div>              
+              </div>
+        
+
+              <div class="carousel-item">
+                <div>
+                  <h1 style="text-align: center; color: #346bf2;">Making Plan</h1>
+                  <p style="text-align: center; padding: 10px;">Study shows that making plan increase productivity.</p>
+                </div>              
+              </div>
+            </div>
+     
+          </div>
+        </div>
+
+        <h2 style="text-align: center; margin-top: 40px;
+         margin-bottom: 30px; color: #346bf2;
+          font-weight: 700;"><strong>FAQ</strong></h2>
+
+        
+        
+        <div class="box-faq" id="faq"></div>
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/task.js"></script>
+    <script src="js/app.js"></script>
+
+
+
+
+
+<script>
+  fetch("https://ahmedezaz.github.io/portfolio/data.json").then((data) => {
+      return data.json();
+    }).then((alldata)=>{
+      let dataIndividual = "";
+      alldata.map((values)=> {
+        dataIndividual +=`<div id="faq">
+            <h5>${values.id+ ". "+values.question}</h5>
+            <p>Answer: ${values.answer}</p>
+          </div>`;
+      });
+
+      document.getElementById("faq").innerHTML = dataIndividual;
+    }).catch((err)=>{
+      console.log(err);
+    });
+
+
+    function geoFindMe() {
+
+const status = document.querySelector('#status');
+const mapLink = document.querySelector('#map-link');
+
+mapLink.href = '';
+mapLink.textContent = '';
+
+function success(position) {
+  const latitude  = position.coords.latitude;
+  const longitude = position.coords.longitude;
+
+  status.textContent = '';
+  mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+  mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+}
+
+function error() {
+  status.textContent = 'Unable to retrieve your location';
+}
+
+if(!navigator.geolocation) {
+  status.textContent = 'Geolocation is not supported by your browser';
+} else {
+  status.textContent = 'Locating…';
+  navigator.geolocation.getCurrentPosition(success, error);
+}
+
+}
+
+document.querySelector('#find-me').addEventListener('click', geoFindMe);
+
+</script>
+<script> 
+  
+ navigator.getBattery()
+  .then(function(battery) {
+    var level = Math.round(battery.level*100)+"%";
+    document.getElementById("battery").innerHTML="Bateery percentage is: "+level;
+
+});
+
+</script>
+<script src="/pwa.js"></script>
+
+</body>
+</html>
