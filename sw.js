@@ -1,3 +1,12 @@
+const appContents = [
+  '/index.html',
+  'js/app.js',
+  'css/main.css',
+  "/img/logo.png",
+  "/"
+];
+
+
 const cacheName = 'v1.taPWA';
 
 self.addEventListener('install', (e) => {
@@ -38,10 +47,3 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
-const appContents = [
-  '/index.html',
-  'js/app.js',
-  'css/main.css',
-  "/img/logo.png",
-  "/"
-];
