@@ -4,7 +4,7 @@
   "theme_color": "#083444",
   "background_color": "#2196f3",
   "display": "standalone",
-  "scope_url": "https://ahmedezaz.github.io/pwa/index.html",
+  "scope": "https://ahmedezaz.github.io/pwa/index.html",
   "start_url": "https://ahmedezaz.github.io/pwa/index.html",
   "icons": [
     {
