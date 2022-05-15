@@ -1,9 +1,10 @@
 
 var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
-document.getElementById("save_card").addEventListener("click", () => {
-  addFlashcard();
-});
+// document.getElementById("save_card").addEventListener("click", () => {
+//   addFlashcard();
+// });
+
 
 document.getElementById("delete_cards").addEventListener("click", () => {
   localStorage.clear();
