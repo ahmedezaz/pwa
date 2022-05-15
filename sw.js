@@ -1,11 +1,6 @@
 const appContents = [
-  '/index.html',
-  'js/app.js',
-  'css/main.css',
-  "/img/logo.png",
-  "/"
+  'index.html'
 ];
-
 
 const cacheName = 'v1.taPWA';
 
