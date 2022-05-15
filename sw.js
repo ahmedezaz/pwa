@@ -1,5 +1,5 @@
 const appContents = [
-  'pwa/index.html'
+  'https://ahmedezaz.github.io/pwa/index.html'
 ];
 
 const cacheName = 'v1.taPWA';
